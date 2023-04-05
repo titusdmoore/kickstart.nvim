@@ -11,5 +11,8 @@ return {
     config = function()
       require("nvim-autopairs").setup {}
     end,
+  },
+  {
+    'wuelnerdotexe/vim-astro'
   }
 }
