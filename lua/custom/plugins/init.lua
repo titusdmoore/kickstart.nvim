@@ -14,5 +14,8 @@ return {
   },
   {
     'wuelnerdotexe/vim-astro'
+  },
+  {
+    'ThePrimeagen/vim-be-good'
   }
 }
