@@ -17,5 +17,8 @@ return {
   },
   {
     'ThePrimeagen/vim-be-good'
+  },
+  {
+    'thosakwe/vim-flutter'
   }
 }
