@@ -20,5 +20,8 @@ return {
   },
   {
     'thosakwe/vim-flutter'
+  },
+  {
+    'ThePrimeagen/harpoon'
   }
 }
