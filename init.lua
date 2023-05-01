@@ -423,6 +423,14 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+-- Add dart for lspconfig outside of mason
+--dartls = {
+--cmd = { '/Users/titusmoore/.flutter/bin/dart', 'language-server', '--protocol=lsp' },
+-- },
+require 'lspconfig'.dartls.setup({
+  cmd = { '/Users/titusmoore/.flutter/bin/dart', 'language-server', '--protocol=lsp' },
+})
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
