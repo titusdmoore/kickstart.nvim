@@ -192,6 +192,9 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
+vim.o.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20,n-v-c:blinkwait700-blinkoff400-blinkon25'
+
+
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeout = true
@@ -280,7 +283,7 @@ vim.keymap.set('n', '<leader>hp', function() require('harpoon.ui').nav_prev() en
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'c_sharp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'php',
-    'dart' },
+    'dart', 'zig' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
