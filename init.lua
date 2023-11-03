@@ -138,6 +138,11 @@ require('lazy').setup({
     },
   },
 
+  -- I want to be able to use this, TODO resolve
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim"
+  -- },
+
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
@@ -219,6 +224,12 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
 }, {})
+
+-- Configure Glow
+require('glow').setup({
+  style = 'dark',
+  install_path = os.getenv("GLOW_PATH")
+})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
