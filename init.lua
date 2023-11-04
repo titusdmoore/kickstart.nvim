@@ -141,21 +141,18 @@ require('lazy').setup({
   {
     "folke/tokyonight.nvim",
     lazy = false,
-    config = function()
-      vim.cmd.colorscheme 'tokyonight-night'
-    end,
     priority = 1000,
     opts = {},
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
+  {
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'onedark'
+    end,
+  },
 
   {
     -- Set lualine as statusline
@@ -235,6 +232,14 @@ require('glow').setup({
   style = 'dark',
   install_path = os.getenv("GLOW_PATH")
 })
+
+-- Configure Theme
+require('tokyonight').setup({
+  style = 'night',
+  terminal_colors = true,
+  sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
+})
+vim.cmd.colorscheme 'tokyonight'
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
