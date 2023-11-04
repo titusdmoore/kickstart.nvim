@@ -139,14 +139,13 @@ require('lazy').setup({
   },
 
   {
-    "tiagovla/tokyodark.nvim",
-    opts = {
-      -- custom options here
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts) -- calling setup is optional
-      vim.cmd [[colorscheme tokyodark]]
+    "folke/tokyonight.nvim",
+    lazy = false,
+    config = function()
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
+    priority = 1000,
+    opts = {},
   },
 
   -- {
@@ -165,7 +164,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyodark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
