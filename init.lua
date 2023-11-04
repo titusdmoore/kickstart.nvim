@@ -139,6 +139,13 @@ require('lazy').setup({
   },
 
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -154,7 +161,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
@@ -219,6 +226,20 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
 }, {})
+
+-- Configure Glow
+require('glow').setup({
+  style = 'dark',
+  install_path = os.getenv("GLOW_PATH")
+})
+
+-- Configure Theme
+require('tokyonight').setup({
+  style = 'night',
+  terminal_colors = true,
+  sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
+})
+vim.cmd.colorscheme 'tokyonight'
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
