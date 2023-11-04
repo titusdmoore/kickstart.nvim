@@ -138,19 +138,25 @@ require('lazy').setup({
     },
   },
 
-  -- I want to be able to use this, TODO resolve
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim"
-  -- },
-
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
+    "tiagovla/tokyodark.nvim",
+    opts = {
+      -- custom options here
+    },
+    config = function(_, opts)
+      require("tokyodark").setup(opts) -- calling setup is optional
+      vim.cmd [[colorscheme tokyodark]]
     end,
   },
+
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
 
   {
     -- Set lualine as statusline
@@ -159,7 +165,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'tokyodark',
         component_separators = '|',
         section_separators = '',
       },
