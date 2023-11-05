@@ -138,12 +138,23 @@ require('lazy').setup({
     },
   },
 
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
+
+
+      {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+      },
+
+--  require('tokyonight').setup({
+--    on_highlights = function(h1, c)
+--      h1.TelescopeResultsTitle = {
+--        bg = c.bg_statusline,
+--        fg = c.fg_sidebar,
+--      }
+--    end
+--  })
 
   {
     -- Theme inspired by Atom
