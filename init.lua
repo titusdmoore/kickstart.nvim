@@ -147,23 +147,15 @@ require('lazy').setup({
     opts = {},
   },
 
-  --  require('tokyonight').setup({
-  --    on_highlights = function(h1, c)
-  --      h1.TelescopeResultsTitle = {
-  --        bg = c.bg_statusline,
-  --        fg = c.fg_sidebar,
-  --      }
-  --    end
-  --  })
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
 
   {
     -- Set lualine as statusline
@@ -249,6 +241,12 @@ require('tokyonight').setup({
   style = 'night',
   terminal_colors = true,
   sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
+  on_highlights = function(hl, c)
+    hl.TelescopeSelection = {
+      fg = c.cyan,
+      bg = c.bg_visual,
+    }
+  end
 })
 vim.cmd.colorscheme 'tokyonight'
 
