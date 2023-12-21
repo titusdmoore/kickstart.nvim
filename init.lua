@@ -461,16 +461,16 @@ vim.g.copilot_assumed_mapped = true
 vim.keymap.set('i', '<C-q>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
 
 -- Configure Harpoon
--- vim.keymap.set('n', '<leader>hh', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [H]ome' })
--- vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file, { desc = '[H]arpoon [X]mark' })
--- vim.keymap.set('n', '<A-1>', function() require('harpoon.ui').nav_file(1) end, { desc = '[H]arpoon [N]avigate [F]ile 1' })
--- vim.keymap.set('n', '<A-2>', function() require('harpoon.ui').nav_file(2) end, { desc = '[H]arpoon [N]avigate [F]ile 2' })
--- vim.keymap.set('n', '<A-3>', function() require('harpoon.ui').nav_file(3) end, { desc = '[H]arpoon [N]avigate [F]ile 3' })
--- vim.keymap.set('n', '<A-4>', function() require('harpoon.ui').nav_file(4) end, { desc = '[H]arpoon [N]avigate [F]ile 4' })
--- vim.keymap.set('n', '<leader>hn', function() require('harpoon.ui').nav_next() end,
---   { desc = '[H]arpoon [N]ext' })
--- vim.keymap.set('n', '<leader>hp', function() require('harpoon.ui').nav_prev() end,
---   { desc = '[H]arpoon [P]revious' })
+vim.keymap.set('n', '<leader>hh', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [H]ome' })
+vim.keymap.set('n', '<leader>hx', require('harpoon.mark').add_file, { desc = '[H]arpoon [X]mark' })
+vim.keymap.set('n', '<A-1>', function() require('harpoon.ui').nav_file(1) end, { desc = '[H]arpoon [N]avigate [F]ile 1' })
+vim.keymap.set('n', '<A-2>', function() require('harpoon.ui').nav_file(2) end, { desc = '[H]arpoon [N]avigate [F]ile 2' })
+vim.keymap.set('n', '<A-3>', function() require('harpoon.ui').nav_file(3) end, { desc = '[H]arpoon [N]avigate [F]ile 3' })
+vim.keymap.set('n', '<A-4>', function() require('harpoon.ui').nav_file(4) end, { desc = '[H]arpoon [N]avigate [F]ile 4' })
+vim.keymap.set('n', '<leader>hn', function() require('harpoon.ui').nav_next() end,
+  { desc = '[H]arpoon [N]ext' })
+vim.keymap.set('n', '<leader>hp', function() require('harpoon.ui').nav_prev() end,
+  { desc = '[H]arpoon [P]revious' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -484,6 +484,10 @@ require('nvim-treesitter.configs').setup {
 
   highlight = { enable = true },
   indent = { enable = true },
+  injection = {
+    enable = true,
+    language_tree = true,
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
