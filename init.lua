@@ -586,7 +586,7 @@ vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'c_sharp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'php',
-    'kotlin', 'zig', 'svelte', 'bash' },
+      'kotlin', 'zig', 'svelte', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -776,6 +776,22 @@ mason_lspconfig.setup_handlers {
 require 'lspconfig'.dartls.setup({
   cmd = { '/Users/titusmoore/.flutter/bin/dart', 'language-server', '--protocol=lsp' },
 })
+
+-- Leptos Config
+require('lspconfig').rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      procMacro = {
+        ignore = {
+          leptos_macro = {
+            "component",
+            "server"
+          }
+        }
+      },
+    },
+  },
+}
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
