@@ -24,9 +24,4 @@ return {
   {
     'ThePrimeagen/harpoon'
   },
-  {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow"
-  }
 }
