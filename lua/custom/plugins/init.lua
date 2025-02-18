@@ -4,24 +4,34 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    "github/copilot.vim"
+    'github/copilot.vim',
   },
   {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
     config = function()
-      require("nvim-autopairs").setup {}
+      require('nvim-autopairs').setup {}
     end,
   },
   {
-    'wuelnerdotexe/vim-astro'
+    'wuelnerdotexe/vim-astro',
   },
   {
-    'ThePrimeagen/vim-be-good'
+    'ThePrimeagen/vim-be-good',
   },
   {
-    'thosakwe/vim-flutter'
+    'thosakwe/vim-flutter',
   },
   {
-    'ThePrimeagen/harpoon'
+    'ThePrimeagen/harpoon',
+  },
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+      -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
   },
 }
