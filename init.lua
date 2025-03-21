@@ -1026,5 +1026,39 @@ vim.keymap.set('n', 'n', 'nzzzv', { noremap = true, silent = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true, silent = true })
 -- END CUSTOM REMAPS
 
+-- CUSTOM CODE
+local harpoon = require 'harpoon'
+
+harpoon:setup()
+
+-- Harpoon Remaps
+vim.set('n', '<leader>ha', function()
+  harpoon:list():add()
+end)
+vim.set('n', '<leader>hh', function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.set('n', '<M-a>', function()
+  harpoon:list():select(1)
+end)
+vim.set('n', '<M-s>', function()
+  harpoon:list():select(2)
+end)
+vim.set('n', '<M-d>', function()
+  harpoon:list():select(3)
+end)
+vim.set('n', '<M-f>', function()
+  harpoon:list():select(4)
+end)
+
+vim.set('n', '<M-r>', function()
+  harpoon:list():prev()
+end)
+vim.set('n', '<M-t>', function()
+  harpoon:list():next()
+end)
+-- END CUSTOM CODE
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
